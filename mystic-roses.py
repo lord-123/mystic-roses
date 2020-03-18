@@ -13,13 +13,14 @@ cartesianCoords = [(i[0] * math.cos(i[1]), i[0] * math.sin(i[1])) for i in polar
 window = turtle.Screen()
 window.bgcolor("black")
 
-pen = turtle.Turtle()
+pen = turtle.Turtle(visible=False)
 pen.color("white")
 pen.up()
 
 for i in combinations(cartesianCoords, 2):
     pen.goto(*i[0])
     pen.down()
+    
     pen.goto(*i[1])
     pen.up()
 
